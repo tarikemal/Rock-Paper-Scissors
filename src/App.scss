@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$orange: #f7941a;
+$light-green: #8dc351;
+$light-purple: #b64141;
+$background-color: #478aef;
+
+* {
+  // margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.2rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: $background-color;
+}
+
+.App {
+  text-align: center;
+}
+
+.score-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 900px;
+  margin: 1rem auto;
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .score-container {
+    display: flex;
+
+    .wins,
+    .losses {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .number {
+      font-size: 2.6rem;
+    }
+
+    .wins {
+      margin-right: 0.6rem;
+    }
+
+    .wins-number {
+      color: black;
+    }
+
+    .losses-number {
+      color: red;
+    }
+  }
+}
+
+.game-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 4.9rem;
+
+  .user-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .game-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .svg-icons {
+        width: 120px;
+        height: 120px;
+        padding-top: 1rem;
+        background-color: $orange;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .svg-paper {
+        background-color: $light-green;
+      }
+
+      .svg-scissors {
+        background-color: $light-purple;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .vs-text {
+    position: absolute;
+    z-index: -1;
+    margin-top: -20px;
+    top: 50%;
+    right: 0;
+    left: 0;
+    font-size: 6rem;
+    opacity: 0.6;
+    transform: rotate(-28deg);
+  }
+
+  .pc-choice {
+    display: flex;
+    flex-direction: column;
+
+    .pc-choice__question-mark {
+      width: 120px;
+      height: 120px;
+      font-size: 4rem;
+      padding-top: 1.3rem;
+      background-color: black;
+      border-radius: 50%;
+      margin-top: calc(2rem + 120px);
+    }
+  }
+}
+
+.game-over {
+  position: absolute;
+  font-size: 4rem;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .game-over__content {
+    background-color: pink;
+    width: 60%;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.7rem;
+    padding: 3rem 1rem;
+    border-radius: 8px;
+  }
+
+  .win {
+    background-color: green;
+  }
+
+  .loss {
+    background-color: red;
+  }
+
+  .draw {
+    background-color: grey;
+  }
+}
